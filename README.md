@@ -5,4 +5,4 @@
 ## Preview
 ### https://marcldo.github.io/Animated-Responsive-Navbar-CSS/
 
-![Demo](assets/index.html#.gif)
+![Demo](assets/screenshot.gif)
