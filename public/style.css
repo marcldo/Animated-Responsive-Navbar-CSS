@@ -9,7 +9,7 @@ font-family: 'Open Sans';
 --text-secondary: #ececec;
 --bg-primary: #23232e;
 --bg-secondary: #141418;
---transition-speed: 600ms ease;
+--transition-speed: 600ms ;
 }
 
 body {
@@ -42,8 +42,6 @@ main {
 }
 
 .navbar {
-  width:5rem;
-  height:100vh;
   position: fixed;
   background-color: var(--bg-primary);
   /* transition effect on navbar */
@@ -92,18 +90,11 @@ main {
 }
 
 .nav-link svg {
+  width: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
 }
 
-/* animate navbar out and display text on hover */
-.navbar:hover {
-  width: 16rem;
-}
-
-.navbar:hover .link-text {
-  display: block;
-}
 
 /* primary and secondary classes inside fontawesome two tone icon */
 .fa-primary {
@@ -141,4 +132,51 @@ main {
 
 .navbar:hover .logo svg {
   transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  
+  /* move navbar to bottom on small scrrens */
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav{
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+/* animate navbar out and display text on hover */
+  .navbar:hover {
+  width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
 }
